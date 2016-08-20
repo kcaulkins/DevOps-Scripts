@@ -1,7 +1,7 @@
 # Install AWS CLI and backup databases nightly
 
 
-    Apt-get update
+    apt-get update
     apt-get -y install python-pip
     pip install awscli
 
@@ -23,4 +23,4 @@
     30 00 * * * mysqldump --defaults-file=/home/ubuntu/.my.cnf -u root [DB_NAME] > /home/ubuntu/db_backup/backup.sql
     35 00 * * * aws s3 sync /home/ubuntu/db_backup s3://[s3_path]
 
-`Sudo service cron restart`
+`sudo service cron restart`
